@@ -1,4 +1,68 @@
-:root   {
-    --backgroud-color: hsl(222, 26%, 31%);
-    --text-color: hsl(0, 0%, 0%);
-}
+//@import "saas:map";
+
+$theme-1-colors: (
+    "backgrounds":(
+        "main-background": hsl(222, 26%, 31%),
+        "toggle-background": hsl(223, 31%, 20%),
+        "keypad-background":hsl(223, 31%, 20%),
+        "screen-bakcground":hsl(224, 36%, 15%)
+    ),
+    "keys":(
+        "key-background": hsl(225, 21%, 49%),
+        "key-shadow": hsl(224, 28%, 35%),
+        "key-background-1": hsl(6, 63%, 50%),
+        "toggle": hsl(6, 63%, 50%),
+        "key-shadow-1": hsl(6, 70%, 34%),
+        "key-background-2": hsl(30, 25%, 89%),
+        "key-shadow-2": hsl(28, 16%, 65%)
+    ), 
+    "text":(
+        "white":hsl(0, 0%, 100%),
+        "blue":hsl(221, 14%, 31%)
+    )
+);
+
+$theme-2-colors: (
+    "backgrounds":(
+        "main-background": hsl(0, 0%, 90%),
+        "toggle-background": hsl(0, 5%, 81%),
+        "keypad-background":hsl(0, 5%, 81%),
+        "screen-bakcground":hsl(0, 0%, 93%)
+    ),
+    "keys":(
+        "key-background": hsl(185, 42%, 37%),
+        "key-shadow": hsl(85, 58%, 25%),
+        "key-background-1": hsl(25, 98%, 40%),
+        "toggle": hsl(25, 98%, 40%),
+        "key-shadow-1": hsl(25, 99%, 27%),
+        "key-background-2": hsl(45, 7%, 89%),
+        "key-shadow-2": hsl(35, 11%, 61%)
+    ), 
+    "text":(
+        "white":hsl(0, 0%, 100%),
+        "yellow":hsl(60, 10%, 19%)
+    )
+);
+
+$theme-3-colors: (
+    "backgrounds":(
+        "main-background": hsl(268, 75%, 9%),
+        "toggle-background": hsl(268, 71%, 12%),
+        "keypad-background":hsl(268, 71%, 12%),
+        "screen-bakcground":hsl(268, 71%, 12%)
+    ),
+    "keys":(
+        "key-background": hsl(281, 89%, 26%),
+        "key-shadow": hsl(285, 91%, 52%),
+        "key-background-1": hsl(176, 100%, 44%),
+        "toggle": hsl(176, 100%, 44%),
+        "key-shadow-1": hsl(177, 92%, 70%),
+        "key-background-2": hsl(268, 47%, 21%),
+        "key-shadow-2": hsl(290, 70%, 36%)
+    ), 
+    "text":(
+        "white":hsl(0, 0%, 100%),
+        "yellow":hsl(52, 100%, 62%),
+        "blue":hsl(198, 20%, 13%)
+    )
+);

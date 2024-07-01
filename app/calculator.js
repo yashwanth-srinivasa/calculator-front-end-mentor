@@ -19,7 +19,10 @@ keys.addEventListener('click', e =>  {
         const action = key.dataset.action
         const keyContent = key.textContent
         const displayedNum = display.textContent
-        
+
+        if (action === 'clear') {
+            display.textContent = '0'
+        }
 
         if (!action) {
             if (displayedNum === '0' && calculated === false)   {
