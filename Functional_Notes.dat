@@ -16,3 +16,15 @@
     -  Animations for hover and click: https://www.w3schools.com/howto/howto_css_animate_buttons.asp; https://www.youtube.com/watch?v=SgmNxE9lWcY&t=70s
     -  Mobile first workflow: https://www.freecodecamp.org/news/taking-the-right-approach-to-responsive-web-design/; https://www.geeksforgeeks.org/how-to-use-media-queries-in-a-mobile-first-approach-in-html/
     -  Use SASS: https://sass-lang.com/guide/; https://www.youtube.com/watch?v=jfMHA8SqUL4&t=96s
+
+
+    4. Measurements:
+    - Desktop:
+        - Breadth = 536px
+        - Length = 630px
+        - Display = 120px
+        - Keypad = 480px
+        - number, operator keys = 95x60 px
+        - Reset, equal key = 208x58 px
+        - Toggle = 70px
+        - Toggle swithch dia = 16px

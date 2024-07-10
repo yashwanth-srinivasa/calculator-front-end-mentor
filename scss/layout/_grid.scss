@@ -1,15 +1,148 @@
 @use '../util' as u;
 
- .grid   {
-     display: grid;
-     grid-template-columns: 20% 20% 20% 20% 20%;
-     grid-template-rows: 20% 20% 20% 20% 20%;
 
-    &__plus {
+.container  {
+    align-content: center;
+}
+
+//track height
+$tkh: 20px;
+//track width
+$tkw: $tkh * 2.0;
+//thumb height
+$thh: $tkh - 4px;
+//thumb width
+$thw: $thh;
+
+#custom-toggle  {
+    height: $tkh;
+    width: $tkw;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+.tgl-def    {
+    background-color: orange;
+}
+
+.calculator {
+  width: u.rem(187.5);
+  height: u.rem(333.5);
+  border-radius: 12px;
+  box-shadow: 0 0 40px 0px rgba(0, 0, 0, 0.15);
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2em;
+  overflow: hidden;
+
+  &__display    {
+    height: 0px;
+    text-align: right;
+    padding: 50px;
+  }
+
+  &__keys   {
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-rows: 25% 25% 25% 25%;
+
+    &--7    {
         grid-column-start: 1;
-        grid-column-end: 3;
         grid-row-start: 1;
-        grid-row-end: 3;
     }
- }
+
+    &--8    {
+        grid-column-start: 2;
+        grid-row-start: 1;
+    }
+
+    &--9    {
+        grid-column-start: 3;
+        grid-row-start: 1;
+    }
+
+    &--delete    {
+        grid-column-start: 4;
+        grid-row-start: 1;
+    }
+
+    &--4    {
+        grid-column-start: 1;
+        grid-row-start: 2;
+    }
+
+    &--5    {
+        grid-column-start: 2;
+        grid-row-start: 2;
+    }
+
+    &--6    {
+        grid-column-start: 3;
+        grid-row-start: 2;
+    }
+
+    &--plus    {
+        grid-column-start: 4;
+        grid-row-start: 2;
+    }
+    
+    &--1    {
+        grid-column-start: 1;
+        grid-row-start: 3;
+    }
+
+    &--2    {
+        grid-column-start: 2;
+        grid-row-start: 3;
+    }
+
+    &--3    {
+        grid-column-start: 3;
+        grid-row-start: 3;
+    }
+
+    &--minus    {
+        grid-column-start: 4;
+        grid-row-start: 3;
+    }
+
+    &--decimal    {
+        grid-column-start: 1;
+        grid-row-start: 4;
+    }
+
+    &--0    {
+        grid-column-start: 2;
+        grid-row-start: 4;
+    }
+
+    &--divide    {
+        grid-column-start: 3;
+        grid-row-start: 4;
+    }
+
+    &--multiply    {
+        grid-column-start: 4;
+        grid-row-start: 4;
+    }
+
+    &--clear    {
+        grid-column-start: 1;
+        grid-row-start: 5;
+        grid-column-end: span 2;
+    }
+
+    &--equal    {
+        grid-column-start: 3;
+        grid-row-start: 5;
+        grid-column-end: span 2;
+    }
+  }
+
+  &__theme    {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+}
 

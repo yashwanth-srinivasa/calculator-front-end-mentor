@@ -1,9 +1,23 @@
+function filterme(value) {
+    value = parseInt(value, 10); // Convert to an integer
+    var switch_theme = document.getElementById("custom-toggle");
+    if (value === 1) {
+      switch_theme.classList.remove('tgl-off', 'tgl-def');
+      switch_theme.classList.add('tgl-on');
+    } else if (value === 2) {
+      switch_theme.classList.remove('tgl-on', 'tgl-off');
+      switch_theme.classList.add('tgl-def');
+    } else if (value === 3) {
+      switch_theme.classList.remove('tgl-def', 'tgl-on');
+      switch_theme.classList.add('tgl-off');
+    }
+  }
+
 const calculator = document.querySelector('.calculator')
 const keys = calculator.querySelector('.calculator__keys')
 const display = document.querySelector('.calculator__display')
 var operatorString = ''
 var calculated = false
-
 
 keys.addEventListener('click', e =>  {
 
@@ -22,6 +36,11 @@ keys.addEventListener('click', e =>  {
 
         if (action === 'clear') {
             display.textContent = '0'
+        }
+
+        if (action === 'delete')    {
+            display.textContent = display.textContent.substring(0,(display.textContent.length)-1)
+            operatorString = operatorString.substring(0,(operatorString.length)-1)
         }
 
         if (!action) {
@@ -62,5 +81,6 @@ keys.addEventListener('click', e =>  {
 
     }
 })   
+
 
 

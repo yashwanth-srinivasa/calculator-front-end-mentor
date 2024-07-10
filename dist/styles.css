@@ -3,8 +3,17 @@
   src: url("../LeagueSpartan-Bold.ttf");
 }
 html {
-  box-sizing: border-box;
-  font-size: 100%;
+  font-size: 175%;
+  font-weight: 300;
+  line-height: 1.3;
+}
+
+body {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  justify-content: center;
 }
 
 *, *::before, *::after {
@@ -42,14 +51,117 @@ a, a:visited, a:active {
   text-decoration: none;
 }
 
-.grid {
-  display: grid;
-  grid-template-columns: 20% 20% 20% 20% 20%;
-  grid-template-rows: 20% 20% 20% 20% 20%;
+.container {
+  align-content: center;
 }
-.grid__plus {
+
+#custom-toggle {
+  height: 20px;
+  width: 40px;
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+.tgl-def {
+  background-color: orange;
+}
+
+.calculator {
+  width: 11.71875rem;
+  height: 20.84375rem;
+  border-radius: 12px;
+  box-shadow: 0 0 40px 0px rgba(0, 0, 0, 0.15);
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2em;
+  overflow: hidden;
+}
+.calculator__display {
+  height: 0px;
+  text-align: right;
+  padding: 50px;
+}
+.calculator__keys {
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  grid-template-rows: 25% 25% 25% 25%;
+}
+.calculator__keys--7 {
   grid-column-start: 1;
-  grid-column-end: 3;
   grid-row-start: 1;
-  grid-row-end: 3;
+}
+.calculator__keys--8 {
+  grid-column-start: 2;
+  grid-row-start: 1;
+}
+.calculator__keys--9 {
+  grid-column-start: 3;
+  grid-row-start: 1;
+}
+.calculator__keys--delete {
+  grid-column-start: 4;
+  grid-row-start: 1;
+}
+.calculator__keys--4 {
+  grid-column-start: 1;
+  grid-row-start: 2;
+}
+.calculator__keys--5 {
+  grid-column-start: 2;
+  grid-row-start: 2;
+}
+.calculator__keys--6 {
+  grid-column-start: 3;
+  grid-row-start: 2;
+}
+.calculator__keys--plus {
+  grid-column-start: 4;
+  grid-row-start: 2;
+}
+.calculator__keys--1 {
+  grid-column-start: 1;
+  grid-row-start: 3;
+}
+.calculator__keys--2 {
+  grid-column-start: 2;
+  grid-row-start: 3;
+}
+.calculator__keys--3 {
+  grid-column-start: 3;
+  grid-row-start: 3;
+}
+.calculator__keys--minus {
+  grid-column-start: 4;
+  grid-row-start: 3;
+}
+.calculator__keys--decimal {
+  grid-column-start: 1;
+  grid-row-start: 4;
+}
+.calculator__keys--0 {
+  grid-column-start: 2;
+  grid-row-start: 4;
+}
+.calculator__keys--divide {
+  grid-column-start: 3;
+  grid-row-start: 4;
+}
+.calculator__keys--multiply {
+  grid-column-start: 4;
+  grid-row-start: 4;
+}
+.calculator__keys--clear {
+  grid-column-start: 1;
+  grid-row-start: 5;
+  grid-column-end: span 2;
+}
+.calculator__keys--equal {
+  grid-column-start: 3;
+  grid-row-start: 5;
+  grid-column-end: span 2;
+}
+.calculator__theme {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
 }/*# sourceMappingURL=styles.css.map */
