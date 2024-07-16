@@ -20,10 +20,18 @@
   <div class="container"> <!--For centering and responsive display-->
     <div class="calculator">
 
-      <div class="calculator__theme">
-        <span>Theme</span>
-        <input type="range" name="points" onchange="filterme(this.value);" min="1" step="1" id="custom-toggle" class="tgl-def" max="3" value="2">
+      <div class="calculator__themeAndTitle">
+        <div class="calculator__themeAndTitle--title">
+          calc
+        </div>
+
+        <div class="calculator__themeAndTitle--theme"> 
+          Theme 
+          <input type="range" name="points" onchange="filterme(this.value);" min="1" step="1" id="custom-toggle" class="calculator__theme--toggle" max="3" value="2">
+        </div>
       </div>
+
+
 
       <div class="calculator__display">0</div> <!--Change contents of the div to reflect what is to be done-->
 

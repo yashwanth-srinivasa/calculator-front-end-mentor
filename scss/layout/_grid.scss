@@ -1,4 +1,6 @@
 @use '../util' as u;
+@use "sass:map";
+@use '../globals/colors' as colors;
 
 
 .container  {
@@ -21,9 +23,6 @@ $thw: $thh;
     cursor: pointer;
 }
 
-.tgl-def    {
-    background-color: orange;
-}
 
 .calculator {
   width: u.rem(187.5);
@@ -34,102 +33,172 @@ $thw: $thh;
   margin-right: auto;
   margin-top: 2em;
   overflow: hidden;
+ 
+  &__themeAndTitle  {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    &--theme    {
+        grid-column-end:-1;
+        padding: u.rem(0);
+        margin: 0;
+    }
+    &--title    {
+        grid-column-start: 1;
+    }
+  }
 
   &__display    {
     height: 0px;
     text-align: right;
-    padding: 50px;
+    grid-column-start: span 2;
+    padding: u.rem(25);
+    width: u.rem(120);
+
   }
 
   &__keys   {
     display: grid;
     grid-template-columns: 25% 25% 25% 25%;
     grid-template-rows: 25% 25% 25% 25%;
+    height: u.rem(200);
+
+    &--*    {
+        
+    }
 
     &--7    {
         grid-column-start: 1;
         grid-row-start: 1;
+        height: u.rem(20);
+        width: u.rem(20);
+        margin: 20%;
     }
 
     &--8    {
         grid-column-start: 2;
         grid-row-start: 1;
+        height: u.rem(20);
+        width: u.rem(20);
+        margin: 20%;
     }
 
     &--9    {
         grid-column-start: 3;
         grid-row-start: 1;
+        height: u.rem(20);
+        width: u.rem(20);
+        margin: 20%;
     }
 
     &--delete    {
         grid-column-start: 4;
         grid-row-start: 1;
+        height: u.rem(20);
+        width: u.rem(20);
+        margin: 20%;
     }
 
     &--4    {
         grid-column-start: 1;
         grid-row-start: 2;
+        height: u.rem(20);
+        width: u.rem(20);
+        margin: 20%;
     }
 
     &--5    {
         grid-column-start: 2;
         grid-row-start: 2;
+        height: u.rem(20);
+        width: u.rem(20);
+        margin: 20%;
     }
 
     &--6    {
         grid-column-start: 3;
         grid-row-start: 2;
+        height: u.rem(20);
+        width: u.rem(20);
+        margin: 20%;
     }
 
     &--plus    {
         grid-column-start: 4;
         grid-row-start: 2;
+        height: u.rem(20);
+        width: u.rem(20);
+        margin: 20%;
     }
     
     &--1    {
         grid-column-start: 1;
         grid-row-start: 3;
+        height: u.rem(20);
+        width: u.rem(20);
+        margin: 20%;
     }
 
     &--2    {
         grid-column-start: 2;
         grid-row-start: 3;
+        height: u.rem(20);
+        width: u.rem(20);
+        margin: 20%;
     }
 
     &--3    {
         grid-column-start: 3;
         grid-row-start: 3;
+        height: u.rem(20);
+        width: u.rem(20);
+        margin: 20%;
     }
 
     &--minus    {
         grid-column-start: 4;
         grid-row-start: 3;
+        height: u.rem(20);
+        width: u.rem(20);
+        margin: 20%;
     }
 
     &--decimal    {
         grid-column-start: 1;
         grid-row-start: 4;
+        height: u.rem(20);
+        width: u.rem(20);
+        margin: 20%;
     }
 
     &--0    {
         grid-column-start: 2;
         grid-row-start: 4;
+        height: u.rem(20);
+        width: u.rem(20);
+        margin: 20%;
     }
 
     &--divide    {
         grid-column-start: 3;
         grid-row-start: 4;
+        height: u.rem(20);
+        width: u.rem(20);
+        margin: 20%;
     }
 
-    &--multiply    {
+    &--times    {
         grid-column-start: 4;
         grid-row-start: 4;
+        height: u.rem(20);
+        width: u.rem(20);
+        margin: 20%;
     }
 
     &--clear    {
         grid-column-start: 1;
         grid-row-start: 5;
         grid-column-end: span 2;
+
     }
 
     &--equal    {

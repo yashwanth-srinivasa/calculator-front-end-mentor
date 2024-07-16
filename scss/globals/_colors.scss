@@ -1,11 +1,11 @@
-//@import "saas:map";
+//@use "saas:map";
 
 $theme-1-colors: (
     "backgrounds":(
-        "main-background": hsl(222, 26%, 31%),
+        "main-background":  hsl(222, 26%, 31%),
         "toggle-background": hsl(223, 31%, 20%),
         "keypad-background":hsl(223, 31%, 20%),
-        "screen-bakcground":hsl(224, 36%, 15%)
+        "screen-background":hsl(224, 36%, 15%)
     ),
     "keys":(
         "key-background": hsl(225, 21%, 49%),
@@ -27,7 +27,7 @@ $theme-2-colors: (
         "main-background": hsl(0, 0%, 90%),
         "toggle-background": hsl(0, 5%, 81%),
         "keypad-background":hsl(0, 5%, 81%),
-        "screen-bakcground":hsl(0, 0%, 93%)
+        "screen-background":hsl(0, 0%, 93%)
     ),
     "keys":(
         "key-background": hsl(185, 42%, 37%),
@@ -49,7 +49,7 @@ $theme-3-colors: (
         "main-background": hsl(268, 75%, 9%),
         "toggle-background": hsl(268, 71%, 12%),
         "keypad-background":hsl(268, 71%, 12%),
-        "screen-bakcground":hsl(268, 71%, 12%)
+        "screen-background":hsl(268, 71%, 12%)
     ),
     "keys":(
         "key-background": hsl(281, 89%, 26%),
@@ -66,3 +66,113 @@ $theme-3-colors: (
         "blue":hsl(198, 20%, 13%)
     )
 );
+
+.container  {
+    align-content: center;
+}
+
+.calculator.theme1 {
+    
+ 
+  &__title  {
+
+  }
+
+  &__theme  {
+
+  }
+
+  &__display    {
+
+
+  }
+
+  &__keys   {
+
+
+    &--7    {
+
+    }
+
+    &--8    {
+
+    }
+
+    &--9    {
+
+    }
+
+    &--delete    {
+
+    }
+
+    &--4    {
+
+    }
+
+    &--5    {
+
+    }
+
+    &--6    {
+
+    }
+
+    &--plus    {
+
+    }
+    
+    &--1    {
+
+    }
+
+    &--2    {
+
+    }
+
+    &--3    {
+
+    }
+
+    &--minus    {
+
+    }
+
+    &--decimal    {
+
+
+    }
+
+    &--0    {
+
+
+    }
+
+    &--divide    {
+
+
+    }
+
+    &--times    {
+
+
+    }
+
+    &--clear    {
+
+
+
+    }
+
+    &--equal    {
+
+
+    }
+  }
+
+  &__theme    {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+}

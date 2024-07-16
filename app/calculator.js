@@ -2,14 +2,14 @@ function filterme(value) {
     value = parseInt(value, 10); // Convert to an integer
     var switch_theme = document.getElementById("custom-toggle");
     if (value === 1) {
-      switch_theme.classList.remove('tgl-off', 'tgl-def');
-      switch_theme.classList.add('tgl-on');
+      switch_theme.classList.remove('theme-2', 'theme-3');
+      switch_theme.classList.add('theme-1');
     } else if (value === 2) {
-      switch_theme.classList.remove('tgl-on', 'tgl-off');
-      switch_theme.classList.add('tgl-def');
+      switch_theme.classList.remove('theme-1', 'theme-3');
+      switch_theme.classList.add('theme-2');
     } else if (value === 3) {
-      switch_theme.classList.remove('tgl-def', 'tgl-on');
-      switch_theme.classList.add('tgl-off');
+      switch_theme.classList.remove('theme-1', 'theme-2');
+      switch_theme.classList.add('theme-3');
     }
   }
 
