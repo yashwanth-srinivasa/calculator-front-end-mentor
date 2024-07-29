@@ -1,217 +1,123 @@
 @use '../util' as u;
-@use "sass:map";
-@use '../globals/colors' as colors;
 
+button {
+    height:u.rem(58);
+    border-radius: u.rem(6.5);
+    border: none;
+    @include    u.breakpoint(large) {
+        width: u.rem(86);
+    }
+}
 
 .container  {
-    align-content: center;
+   width: u.rem(320);
+   @include    u.breakpoint(large) {
+    width: u.rem(480);
+    }
 }
 
-//track height
-$tkh: 20px;
-//track width
-$tkw: $tkh * 2.0;
-//thumb height
-$thh: $tkh - 4px;
-//thumb width
-$thw: $thh;
+input[type="range"]     {
+    
+    -webkit-appearance: none;
+    width: u.rem(60);
+    height: u.rem(20);
 
-#custom-toggle  {
-    height: $tkh;
-    width: $tkw;
-    border-radius: 25px;
-    cursor: pointer;
+
+    &::-webkit-slider-runnable-track    {
+
+        height: u.rem(20);
+        border-radius: u.rem(25);
+        margin: 10px 0px;
+    }
+
+    &::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        margin-top: u.rem(2);
+
+        width: u.rem(16);
+        height: u.rem(16);
+        border-radius: u.rem(25);
+
+    }
+
 }
-
 
 .calculator {
-  width: u.rem(187.5);
-  height: u.rem(333.5);
-  border-radius: 12px;
-  box-shadow: 0 0 40px 0px rgba(0, 0, 0, 0.15);
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 2em;
-  overflow: hidden;
- 
-  &__themeAndTitle  {
-    display: grid;
-    grid-template-columns: 50% 50%;
-    &--theme    {
-        grid-column-end:-1;
-        padding: u.rem(0);
-        margin: 0;
+
+    max-height: 78.67vh;
+
+    &__header   {
+        display: flex;
+        justify-content: space-between;
+
+        &--title {
+            font-size: u.rem(32);
+        }
+
+        &--theme   {
+            position: relative;
+            bottom: u.rem(15);
+        }
+
+        &--theme__value {
+            position: relative;
+            left: u.rem(58);
+            gap:u.rem(15);
+            display: flex;
+            font-size: u.rem(16);
+            line-height: u.rem(21);
+            padding-bottom: u.rem(5);
+
+        }
+
+        &--theme__toggle {
+            height:u.rem(20);
+            width:u.rem(60);
+            border-radius: u.rem(25);
+        }
+
+        &--theme__title {
+            position: relative;
+            left: - u.rem(7);
+            bottom: u.rem(7);
+        }
     }
-    &--title    {
-        grid-column-start: 1;
+
+    &__display {
+
+        font-size: u.rem(32);
+        border-radius: u.rem(20);
+        padding: u.rem(20);
+        text-align: right;
     }
-  }
 
-  &__display    {
-    height: 0px;
-    text-align: right;
-    grid-column-start: span 2;
-    padding: u.rem(25);
-    width: u.rem(120);
-
-  }
-
-  &__keys   {
-    display: grid;
-    grid-template-columns: 25% 25% 25% 25%;
-    grid-template-rows: 25% 25% 25% 25%;
-    height: u.rem(200);
-
-    &--*    {
+    &__keys   {
         
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(5, 1fr);
+        grid-gap: u.rem(12);
+        padding: u.rem(28) u.rem(23) u.rem(28) u.rem(23);
+        border-radius: u.rem(10);
+        margin: u.rem(18) 0 0 0;
+
+        &--clear {
+            grid-column: 1 / 3;
+            @include    u.breakpoint(large) {
+                width: u.rem(200)
+            }
+        }
+
+        &--equal {
+            grid-column: 3 / 5;
+            @include    u.breakpoint(large) {
+                width: u.rem(200)
+            }
+        }
     }
 
-    &--7    {
-        grid-column-start: 1;
-        grid-row-start: 1;
-        height: u.rem(20);
-        width: u.rem(20);
-        margin: 20%;
-    }
 
-    &--8    {
-        grid-column-start: 2;
-        grid-row-start: 1;
-        height: u.rem(20);
-        width: u.rem(20);
-        margin: 20%;
-    }
 
-    &--9    {
-        grid-column-start: 3;
-        grid-row-start: 1;
-        height: u.rem(20);
-        width: u.rem(20);
-        margin: 20%;
-    }
-
-    &--delete    {
-        grid-column-start: 4;
-        grid-row-start: 1;
-        height: u.rem(20);
-        width: u.rem(20);
-        margin: 20%;
-    }
-
-    &--4    {
-        grid-column-start: 1;
-        grid-row-start: 2;
-        height: u.rem(20);
-        width: u.rem(20);
-        margin: 20%;
-    }
-
-    &--5    {
-        grid-column-start: 2;
-        grid-row-start: 2;
-        height: u.rem(20);
-        width: u.rem(20);
-        margin: 20%;
-    }
-
-    &--6    {
-        grid-column-start: 3;
-        grid-row-start: 2;
-        height: u.rem(20);
-        width: u.rem(20);
-        margin: 20%;
-    }
-
-    &--plus    {
-        grid-column-start: 4;
-        grid-row-start: 2;
-        height: u.rem(20);
-        width: u.rem(20);
-        margin: 20%;
-    }
-    
-    &--1    {
-        grid-column-start: 1;
-        grid-row-start: 3;
-        height: u.rem(20);
-        width: u.rem(20);
-        margin: 20%;
-    }
-
-    &--2    {
-        grid-column-start: 2;
-        grid-row-start: 3;
-        height: u.rem(20);
-        width: u.rem(20);
-        margin: 20%;
-    }
-
-    &--3    {
-        grid-column-start: 3;
-        grid-row-start: 3;
-        height: u.rem(20);
-        width: u.rem(20);
-        margin: 20%;
-    }
-
-    &--minus    {
-        grid-column-start: 4;
-        grid-row-start: 3;
-        height: u.rem(20);
-        width: u.rem(20);
-        margin: 20%;
-    }
-
-    &--decimal    {
-        grid-column-start: 1;
-        grid-row-start: 4;
-        height: u.rem(20);
-        width: u.rem(20);
-        margin: 20%;
-    }
-
-    &--0    {
-        grid-column-start: 2;
-        grid-row-start: 4;
-        height: u.rem(20);
-        width: u.rem(20);
-        margin: 20%;
-    }
-
-    &--divide    {
-        grid-column-start: 3;
-        grid-row-start: 4;
-        height: u.rem(20);
-        width: u.rem(20);
-        margin: 20%;
-    }
-
-    &--times    {
-        grid-column-start: 4;
-        grid-row-start: 4;
-        height: u.rem(20);
-        width: u.rem(20);
-        margin: 20%;
-    }
-
-    &--clear    {
-        grid-column-start: 1;
-        grid-row-start: 5;
-        grid-column-end: span 2;
-
-    }
-
-    &--equal    {
-        grid-column-start: 3;
-        grid-row-start: 5;
-        grid-column-end: span 2;
-    }
-  }
-
-  &__theme    {
-    display: flex;
-    align-items: center;
-    flex-direction: row;
 }
-}
+
 

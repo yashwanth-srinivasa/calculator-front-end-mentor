@@ -1,178 +1,144 @@
-//@use "saas:map";
+@use '../util' as u;
 
-$theme-1-colors: (
-    "backgrounds":(
-        "main-background":  hsl(222, 26%, 31%),
-        "toggle-background": hsl(223, 31%, 20%),
-        "keypad-background":hsl(223, 31%, 20%),
-        "screen-background":hsl(224, 36%, 15%)
-    ),
-    "keys":(
-        "key-background": hsl(225, 21%, 49%),
-        "key-shadow": hsl(224, 28%, 35%),
-        "key-background-1": hsl(6, 63%, 50%),
-        "toggle": hsl(6, 63%, 50%),
-        "key-shadow-1": hsl(6, 70%, 34%),
-        "key-background-2": hsl(30, 25%, 89%),
-        "key-shadow-2": hsl(28, 16%, 65%)
-    ), 
-    "text":(
-        "white":hsl(0, 0%, 100%),
-        "blue":hsl(221, 14%, 31%)
-    )
-);
+:root {
+  --main-background: hsl(222, 26%, 31%);
+  --toggle-background: hsl(223, 31%, 20%);
+  --keypad-background: hsl(223, 31%, 20%);
+  --screen-background: hsl(224, 36%, 15%);
 
-$theme-2-colors: (
-    "backgrounds":(
-        "main-background": hsl(0, 0%, 90%),
-        "toggle-background": hsl(0, 5%, 81%),
-        "keypad-background":hsl(0, 5%, 81%),
-        "screen-background":hsl(0, 0%, 93%)
-    ),
-    "keys":(
-        "key-background": hsl(185, 42%, 37%),
-        "key-shadow": hsl(85, 58%, 25%),
-        "key-background-1": hsl(25, 98%, 40%),
-        "toggle": hsl(25, 98%, 40%),
-        "key-shadow-1": hsl(25, 99%, 27%),
-        "key-background-2": hsl(45, 7%, 89%),
-        "key-shadow-2": hsl(35, 11%, 61%)
-    ), 
-    "text":(
-        "white":hsl(0, 0%, 100%),
-        "yellow":hsl(60, 10%, 19%)
-    )
-);
+  --utility-key-background:hsl(225, 21%, 49%);
+  --utility-key-shadow:  hsl(224, 28%, 35%);
 
-$theme-3-colors: (
-    "backgrounds":(
-        "main-background": hsl(268, 75%, 9%),
-        "toggle-background": hsl(268, 71%, 12%),
-        "keypad-background":hsl(268, 71%, 12%),
-        "screen-background":hsl(268, 71%, 12%)
-    ),
-    "keys":(
-        "key-background": hsl(281, 89%, 26%),
-        "key-shadow": hsl(285, 91%, 52%),
-        "key-background-1": hsl(176, 100%, 44%),
-        "toggle": hsl(176, 100%, 44%),
-        "key-shadow-1": hsl(177, 92%, 70%),
-        "key-background-2": hsl(268, 47%, 21%),
-        "key-shadow-2": hsl(290, 70%, 36%)
-    ), 
-    "text":(
-        "white":hsl(0, 0%, 100%),
-        "yellow":hsl(52, 100%, 62%),
-        "blue":hsl(198, 20%, 13%)
-    )
-);
+  --number-key-background: hsl(30, 25%, 89%);
+  --number-key-shadow: hsl(28, 16%, 65%);
 
-.container  {
-    align-content: center;
+  --equal-key-background: hsl(6, 63%, 50%);
+  --equal-key-shadow: hsl(6, 70%, 34%);
+  --equal-key-font: hsl(0, 0%, 100%); 
+
+  --toggle-thumb: hsl(6, 63%, 50%);
+
+  --text-primary:  hsl(221, 14%, 31%);   
+  --text-secondary: hsl(0, 0%, 100%); 
+  --header-text: hsl(0, 0%, 100%); 
+
 }
 
-.calculator.theme1 {
-    
- 
-  &__title  {
+[data-color-scheme="theme-2"] {
+  --main-background: hsl(0, 0%, 90%);
+  --toggle-background: hsl(0, 5%, 81%);
+  --keypad-background: hsl(0, 5%, 81%);
+  --screen-background: hsl(0, 0%, 93%);
+
+  --utility-key-background:hsl(185, 42%, 37%);
+  --utility-key-shadow:  hsl(85, 58%, 25%);
+
+  --number-key-background: hsl(45, 7%, 89%);
+  --number-key-shadow: hsl(35, 11%, 61%);
+
+  --equal-key-background: hsl(25, 98%, 40%);
+  --equal-key-shadow: hsl(25, 99%, 27%);
+  --equal-key-font: hsl(0, 0%, 100%); 
+
+  --toggle-thumb: hsl(6, 63%, 50%);
+
+  --text-primary: hsl(221, 14%, 31%);
+  --text-secondary: hsl(0, 0%, 100%);
+  --header-text: hsl(221, 14%, 31%);
+
+}
+
+[data-color-scheme="theme-3"] {
+  --main-background: hsl(268, 75%, 9%);
+  --toggle-background: hsl(268, 71%, 12%);
+  --keypad-background: hsl(268, 71%, 12%);
+  --screen-background: hsl(268, 71%, 12%);
+
+  --utility-key-background:hsl(281, 89%, 26%);
+  --utility-key-shadow:  hsl(285, 91%, 52%);
+
+  --number-key-background: hsl(268, 47%, 21%);
+  --number-key-shadow: hsl(290, 70%, 36%);
+
+  --equal-key-background: hsl(176, 100%, 44%);
+  --equal-key-shadow: hsl(177, 92%, 70%);
+  --equal-key-font: hsl(0, 0%, 100%); 
+
+  --toggle-thumb: hsl(176, 100%, 44%);
+
+  --text-primary:    hsl(52, 100%, 62%);
+  --text-secondary:    hsl(0, 0%, 100%);
+  --header-text:    hsl(52, 100%, 62%);
+
+}
+
+.attribution  {
+  color: var(--header-text);
+}
+
+body {
+  background-color: var(--main-background);
+  transition: background-color 0.5s;
+}
+
+button  {
+  box-shadow: inset 0px -4px 0px var(--number-key-shadow);
+  background-color: var(--number-key-background);
+  color: var(--text-primary);
+  transition: background-color 0.5s;
+}
+
+input[type="range"]     {
+  
+  -webkit-appearance: none;
+  background-color: var(--toggle-background);
+  transition: background-color 0.5s;
+
+  &::-webkit-slider-thumb {
+    background-color: var(--toggle-thumb);
+    transition: background-color 0.5s;
+  }
+
+}
+
+.calculator {
+
+  &__header   {
+
+    color: var(--header-text);
 
   }
 
-  &__theme  {
-
-  }
-
-  &__display    {
-
-
+  &__display {
+    background-color: var(--screen-background);
+    transition: background-color 0.5s;
+    color: var(--header-text);
   }
 
   &__keys   {
+    background-color: var(--keypad-background);
+    transition: background-color 0.5s;
 
+      &--clear {
+        background-color: var(--utility-key-background);
+        transition: background-color 0.5s;
+        box-shadow: inset 0px -4px 0px var(--utility-key-shadow);
+        color: var(--text-secondary);
+      }
 
-    &--7    {
+      &--equal {
+        color: var(--equal-key-font);
+        background-color: var(--equal-key-background);
+        transition: background-color 0.5s;
+        box-shadow: inset 0px -4px 0px var(--equal-key-shadow);
+      }
 
-    }
-
-    &--8    {
-
-    }
-
-    &--9    {
-
-    }
-
-    &--delete    {
-
-    }
-
-    &--4    {
-
-    }
-
-    &--5    {
-
-    }
-
-    &--6    {
-
-    }
-
-    &--plus    {
-
-    }
-    
-    &--1    {
-
-    }
-
-    &--2    {
-
-    }
-
-    &--3    {
-
-    }
-
-    &--minus    {
-
-    }
-
-    &--decimal    {
-
-
-    }
-
-    &--0    {
-
-
-    }
-
-    &--divide    {
-
-
-    }
-
-    &--times    {
-
-
-    }
-
-    &--clear    {
-
-
-
-    }
-
-    &--equal    {
-
-
-    }
+      &--delete {
+        color: var(--text-secondary);
+        background-color: var(--utility-key-background);
+        transition: background-color 0.5s;
+        box-shadow: inset 0px -4px 0px var(--utility-key-shadow);
+      }
   }
 
-  &__theme    {
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-}
 }

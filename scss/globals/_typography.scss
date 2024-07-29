@@ -6,12 +6,9 @@ h1,h2,h3    {
     margin-top: 0;
 }
 
-h1  {
-    // font-size: clamp(28px, 16px + 2vw, 40px);
+h1, button  {
 
-    // font-size: clamp(1.75rem, 1rem + 2vw, 2.5rem);
-
-    font-size: clamp(u.rem(28), u.rem(16) + 2vw, u.rem(40));
+    font-size: clamp(u.rem(28), u.rem(16) + 2vw, u.rem(32));
 
 }
 
@@ -28,5 +25,24 @@ p   {
 
 a, a:visited, a:active   {
     text-decoration: none;
-
 }
+
+.calculator {
+
+  &__keys   {
+ 
+  
+        &--clear {
+            font-size: clamp(u.rem(22), u.rem(16) + 2vw, u.rem(22));
+        }
+  
+        &--equal {
+            font-size: clamp(u.rem(22), u.rem(16) + 2vw, u.rem(22));
+        }
+  
+        &--delete {
+            font-size: clamp(u.rem(22), u.rem(16) + 2vw, u.rem(22));
+        }
+    }
+  
+  }
