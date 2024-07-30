@@ -39,8 +39,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: https://github.com/yashwanth-srinivasa/calculator-front-end-mentor
+- Live Site URL: https://calc-multi-theme.netlify.app/
 
 ## My process
 
